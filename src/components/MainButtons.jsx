@@ -5,7 +5,7 @@ import pause from '../sounds/pause.mp3';
 import stop from '../sounds/impostor-win.mp3';
 
 const sfx = [
-  { label: 'start', sound: start },
+  { label: 'play', sound: start },
   { label: 'pause', sound: pause },
   { label: 'stop', sound: stop },
 ];
@@ -31,9 +31,10 @@ class MainButtons extends Component {
         type="button"
         key={ index }
         id={ `${soundObj.label}-btn` }
+        className={ `fas fa-${soundObj.label}` }
         onClick={ () => this.soundPlay(soundObj.sound) }
       >
-        {soundObj.label}
+        {' '}
       </button>
     ));
   }
