@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,33 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+body {
+  background-color: #1f1e1e;
+  color: rgb(141, 135, 135);
+  display: flex;
+  justify-content: center;
+}
+
+.timer-container {
+  display: flex;
+  /* background-image: url('./images/timer.png'); */
+}
+
+.timer-background {
+  width: 80%;
+  position: relative;
+  z-index: 0;
+}
+
+.timer {
+  position: absolute;
+  color: red;
+  margin-top: 210px;
+  margin-left: 140px;
+}
+
+.dial-pad {
+  position: absolute;
 }
