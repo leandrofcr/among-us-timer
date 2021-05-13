@@ -80,7 +80,7 @@ header {
 }
 
 .dial-pad-container button:hover {
-  background-color: rgb(219, 215, 215);
+  background-color: cyan;
 }
 
 #del,
@@ -89,15 +89,18 @@ header {
   text-align: center;
 }
 
-.command-btn button {
-  color: rgb(94, 90, 90);
+.main-buttons button {
+  color: black;
   border: none;
   margin: 5px;
   padding: 5px 10px;
   border-radius: 5px;
+  background-color: rgb(165, 165, 165);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.command-btn button:hover {
+.main-buttons button:hover {
   background-color: cyan;
 }
 
