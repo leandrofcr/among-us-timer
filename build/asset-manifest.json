@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/among-us-timer/static/css/main.ff2338cf.chunk.css",
+    "main.js": "/among-us-timer/static/js/main.41acf89f.chunk.js",
+    "main.js.map": "/among-us-timer/static/js/main.41acf89f.chunk.js.map",
+    "runtime-main.js": "/among-us-timer/static/js/runtime-main.b0cde6f9.js",
+    "runtime-main.js.map": "/among-us-timer/static/js/runtime-main.b0cde6f9.js.map",
+    "static/js/2.e0f7c03b.chunk.js": "/among-us-timer/static/js/2.e0f7c03b.chunk.js",
+    "static/js/2.e0f7c03b.chunk.js.map": "/among-us-timer/static/js/2.e0f7c03b.chunk.js.map",
+    "static/js/3.5e556832.chunk.js": "/among-us-timer/static/js/3.5e556832.chunk.js",
+    "static/js/3.5e556832.chunk.js.map": "/among-us-timer/static/js/3.5e556832.chunk.js.map",
+    "index.html": "/among-us-timer/index.html",
+    "static/css/main.ff2338cf.chunk.css.map": "/among-us-timer/static/css/main.ff2338cf.chunk.css.map",
+    "static/js/2.e0f7c03b.chunk.js.LICENSE.txt": "/among-us-timer/static/js/2.e0f7c03b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/among-us-timer/static/media/VCR_OSD_MONO_1.001.10cf96d5.ttf",
+    "static/media/impostor-win.a3cf6271.mp3": "/among-us-timer/static/media/impostor-win.a3cf6271.mp3",
+    "static/media/pause.895d2f7f.mp3": "/among-us-timer/static/media/pause.895d2f7f.mp3",
+    "static/media/start.c8149644.mp3": "/among-us-timer/static/media/start.c8149644.mp3",
+    "static/media/App.css": "/among-us-timer/static/media/timer.19bc64d6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0cde6f9.js",
+    "static/js/2.e0f7c03b.chunk.js",
+    "static/css/main.ff2338cf.chunk.css",
+    "static/js/main.41acf89f.chunk.js"
+  ]
+}
