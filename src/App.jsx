@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import DialPad from './components/DialPad';
 import Header from './components/Header';
-// import timer from './images/timer.png';
-// <img src={ timer } alt="timer background" className="timer-background" />
 
 class App extends Component {
   render() {

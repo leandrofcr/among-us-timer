@@ -1,7 +1,4 @@
 body {
-  /* background-color: #1f1e1e; */
-  /* background-image: url("./images/background.jpg");
-  background-repeat: no-repeat; */
   color: rgb(141, 135, 135);
   display: flex;
   justify-content: center;
@@ -18,6 +15,7 @@ header {
   background-color: #0a0a0a;
   margin: 0;
   width: 100%;
+  color: rgba(245, 245, 245, 0.822);
 }
 
 .title-spotlight {
@@ -40,7 +38,7 @@ header {
 .main-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 30px;
   background-image: url("./images/timer.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -85,11 +83,15 @@ header {
   background-color: rgb(219, 215, 215);
 }
 
-body {
-  margin: 0;
-  overflow: hidden;
+#del, #clear {
+  font-size: 0.8em;
+  text-align: center;
 }
 
+
+
+
+/* The background is by Loius Hoebregts. Available on Codepe. Copyright (c) 2021 by Louis Hoebregts (https://codepen.io/Mamboleoo/pen/WNxOvjo) */
 sky {
   display: block;
   background: black;
