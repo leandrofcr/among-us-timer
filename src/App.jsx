@@ -16,10 +16,9 @@ class App extends Component {
               05:30
             </span>
           </div>
-          <div className="dialPad-container">
+          <div className="dial-pad-container">
             <DialPad />
           </div>
-
         </div>
 
       </div>

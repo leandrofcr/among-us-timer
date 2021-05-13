@@ -13,12 +13,12 @@ class DialPad extends Component {
     const numbers = [];
     const MAX = 10;
     for (let i = 0; i < MAX; i += 1) {
-      numbers.push(<li key={ i }>{ i }</li>);
+      numbers.push(<button type="button" key={ i }>{ i }</button>);
     }
     return (
-      <ul className="dial-pad">
+      <div className="dial-pad-buttons">
         {numbers}
-      </ul>);
+      </div>);
   }
 }
 

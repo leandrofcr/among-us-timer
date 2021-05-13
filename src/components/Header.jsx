@@ -4,8 +4,12 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>There is 1 Timer among us</h1>
-        {/* // dark mode and language selection */}
+        <h1>
+          There is
+          <span className="title-spotlight"> 1 Timer </span>
+          {' '}
+          among us
+        </h1>
       </header>
     );
   }
