@@ -6,7 +6,7 @@ class DialPad extends Component {
     const numbers = [];
     const MAX = 10;
     for (let i = 1; i < MAX; i += 1) {
-      numbers.push(i);
+      numbers.push(i.toString());
     }
     const { addTime } = this.props;
     return (
@@ -21,7 +21,7 @@ class DialPad extends Component {
           </button>
         ))}
         <button type="button" key="del" className="fas fa-backspace" id="del"> </button>
-        <button type="button" key={ 0 }>0</button>
+        <button type="button" key={ 0 } onClick={ () => addTime('0') }>0</button>
         <button type="button" key="clear" id="clear">C</button>
       </div>);
   }

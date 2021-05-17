@@ -8,20 +8,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: 5,
+      seconds: 0,
       minutes: 0,
+      timeIndex: 3,
+      inputTime: ['0', '0', '0', '0'],
     };
     this.startTimer = this.startTimer.bind(this);
     this.pauseTimer = this.pauseTimer.bind(this);
     this.stopTimer = this.stopTimer.bind(this);
     this.addTime = this.addTime.bind(this);
+    this.convertToNumber = this.convertToNumber.bind(this);
   }
 
   componentDidMount() {
 
   }
 
+  convertToNumber() {
+    const { inputTime } = this.state;
+    const secNumber = parseFloat(inputTime[2] + inputTime[3]);
+    const minNumber = parseFloat(inputTime[0] + inputTime[1]);
+
+    // limit seconds value in 60;
+
+    this.setState({
+      seconds: secNumber,
+      minutes: minNumber,
+    });
+  }
+
   startTimer() {
+    this.convertToNumber();
     const ONE_SECOND = 1000;
     this.timerInterval = setInterval(() => {
       const { seconds, minutes } = this.state;
@@ -44,13 +61,39 @@ class App extends Component {
     clearInterval(this.timerInterval);
     this.setState({
       seconds: 0,
-      minutes: 1,
+      minutes: 0,
+      timeIndex: 3,
     });
   }
 
+  // ------- rebuild addTime function
   addTime(param) {
+    const { inputTime, timeIndex } = this.state;
+    const newValue = inputTime;
+    const maxSize = 3;
+    if (timeIndex === maxSize) {
+      newValue[timeIndex] = param;
+    }
+    if (timeIndex === 2) {
+      newValue[timeIndex] = newValue[timeIndex + 1];
+      newValue[timeIndex + 1] = param;
+    }
+    if (timeIndex === 1) {
+      newValue[timeIndex] = newValue[timeIndex + 1];
+      newValue[timeIndex + 1] = newValue[timeIndex + 2];
+      newValue[timeIndex + 2] = param;
+    }
+    if (timeIndex === 0) {
+      newValue[timeIndex] = newValue[timeIndex + 1];
+      newValue[timeIndex + 1] = newValue[timeIndex + 2];
+      newValue[timeIndex + 2] = newValue[timeIndex + maxSize];
+      newValue[timeIndex + maxSize] = param;
+    }
+
+    this.convertToNumber();
     this.setState((prevState) => ({
-      seconds: prevState.seconds + param,
+      inputTime: newValue,
+      timeIndex: prevState.timeIndex - 1,
     }));
   }
 
