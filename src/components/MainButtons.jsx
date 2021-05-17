@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Howl, Howler } from 'howler';
+import PropTypes from 'prop-types';
 import start from '../sounds/start.mp3';
 import pause from '../sounds/pause.mp3';
 import stop from '../sounds/impostor-win.mp3';
@@ -26,13 +27,22 @@ class MainButtons extends Component {
   }
 
   renderButtons() {
+    const { startTimer, pauseTimer } = this.props;
     return sfx.map((soundObj, index) => (
       <button
         type="button"
         key={ index }
         id={ `${soundObj.label}-btn` }
         className={ `fas fa-${soundObj.label}` }
-        onClick={ () => this.soundPlay(soundObj.sound) }
+        onClick={ () => {
+          this.soundPlay(soundObj.sound);
+          if (soundObj.label === 'play') {
+            startTimer();
+          }
+          if (soundObj.label === 'pause') {
+            pauseTimer();
+          }
+        } }
       >
         {' '}
       </button>
@@ -48,5 +58,11 @@ class MainButtons extends Component {
       </div>);
   }
 }
+
+MainButtons.propTypes = {
+  play: PropTypes.func,
+  pause: PropTypes.func,
+  // stop: PropTypes.func,
+}.isRequired;
 
 export default MainButtons;
