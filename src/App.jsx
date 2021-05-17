@@ -12,6 +12,7 @@ class App extends Component {
     };
     this.startTimer = this.startTimer.bind(this);
     this.pauseTimer = this.pauseTimer.bind(this);
+    this.stopTimer = this.stopTimer.bind(this);
   }
 
   componentDidMount() {
@@ -29,13 +30,23 @@ class App extends Component {
     clearInterval(this.timerInterval);
   }
 
+  stopTimer() {
+    this.setState({
+      seconds: '00:00',
+    });
+  }
+
   render() {
     const { seconds } = this.state;
     return (
       <div className="App">
         <Header />
         <Timer seconds={ seconds } />
-        <MainButtons startTimer={ this.startTimer } pauseTimer={ this.pauseTimer } />
+        <MainButtons
+          startTimer={ this.startTimer }
+          pauseTimer={ this.pauseTimer }
+          stopTimer={ this.stopTimer }
+        />
       </div>
     );
   }

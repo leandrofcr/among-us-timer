@@ -27,7 +27,7 @@ class MainButtons extends Component {
   }
 
   renderButtons() {
-    const { startTimer, pauseTimer } = this.props;
+    const { startTimer, pauseTimer, stopTimer } = this.props;
     return sfx.map((soundObj, index) => (
       <button
         type="button"
@@ -41,6 +41,9 @@ class MainButtons extends Component {
           }
           if (soundObj.label === 'pause') {
             pauseTimer();
+          }
+          if (soundObj.label === 'stop') {
+            stopTimer();
           }
         } }
       >
