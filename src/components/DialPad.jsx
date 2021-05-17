@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class DialPad extends Component {
   render() {
     const numbers = [];
     const MAX = 10;
     for (let i = 1; i < MAX; i += 1) {
-      numbers.push(<button type="button" key={ i }>{ i }</button>);
+      numbers.push(i);
     }
+    const { addTime } = this.props;
     return (
       <div className="dial-pad-buttons">
-        {numbers}
+        {numbers.map((num) => (
+          <button
+            type="button"
+            key={ num }
+            onClick={ () => addTime(num) }
+          >
+            { num }
+          </button>
+        ))}
         <button type="button" key="del" className="fas fa-backspace" id="del"> </button>
         <button type="button" key={ 0 }>0</button>
         <button type="button" key="clear" id="clear">C</button>
       </div>);
   }
 }
+
+DialPad.propTypes = {
+  addTime: PropTypes.func,
+}.isRequired;
 
 export default DialPad;
