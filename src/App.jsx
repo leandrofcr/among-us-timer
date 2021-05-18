@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import MainButtons from './components/MainButtons';
 import Stars from './components/Stars';
@@ -129,6 +130,7 @@ class App extends Component {
           pauseTimer={ this.pauseTimer }
           stopTimer={ this.stopTimer }
         />}
+        {!showAnimation && <Footer />}
       </div>
     );
   }
