@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Howl } from 'howler';
 import '../style.css';
 import eject from '../sounds/eject.mp3';
+import alert from '../sounds/pause.mp3';
 
 class Stars extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class Stars extends Component {
   }
 
   componentDidMount() {
+    this.soundPlay(alert);
     this.soundPlay(eject);
   }
 
@@ -36,19 +38,21 @@ class Stars extends Component {
           <p>Y</p>
           <p>o</p>
           <p>u</p>
+          <p>r</p>
           <p className="w"> </p>
-          <p>w</p>
-          <p>a</p>
+          <p>t</p>
+          <p>i</p>
+          <p>m</p>
+          <p>e</p>
+          <p className="w"> </p>
+          <p>i</p>
           <p>s</p>
           <p className="w"> </p>
+          <p>o</p>
+          <p>v</p>
           <p>e</p>
-          <p>j</p>
-          <p>e</p>
-          <p>c</p>
-          <p>t</p>
-          <p>e</p>
-          <p>d</p>
-          <p>.</p>
+          <p>r</p>
+
         </h2>
         <boi>
           <rightleg />
