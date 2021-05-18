@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 import PropTypes from 'prop-types';
 import start from '../sounds/start.mp3';
 import pause from '../sounds/pause.mp3';
@@ -21,7 +21,7 @@ class MainButtons extends Component {
   soundPlay(src) {
     const sound = new Howl({
       src,
-      volume: 0.5,
+      volume: 0.3,
     });
     sound.play();
   }
@@ -53,8 +53,6 @@ class MainButtons extends Component {
   }
 
   render() {
-    const VOLUME = 0.1;
-    Howler.volume(VOLUME);
     return (
       <div className="main-buttons">
         {this.renderButtons()}

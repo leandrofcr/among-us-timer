@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class DialPad extends Component {
   render() {
+    const { reset } = this.props;
     const numbers = [];
     const MAX = 10;
     for (let i = 1; i < MAX; i += 1) {
@@ -20,9 +21,16 @@ class DialPad extends Component {
             { num }
           </button>
         ))}
-        <button type="button" key="del" className="fas fa-backspace" id="del"> </button>
+        <button
+          type="button"
+          key="backspace"
+          className="fas fa-backspace"
+          id="del"
+        >
+          {' '}
+        </button>
         <button type="button" key={ 0 } onClick={ () => addTime('0') }>0</button>
-        <button type="button" key="clear" id="clear">C</button>
+        <button type="button" key="clear" id="clear" onClick={ reset }>C</button>
       </div>);
   }
 }

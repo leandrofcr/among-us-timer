@@ -38,7 +38,7 @@ header {
 .main-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10%;
   background-image: url("./images/timer.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -104,9 +104,14 @@ header {
   background-color: cyan;
 }
 
+.fa-backspace:hover{
+  pointer-events: none;
+  cursor: no-drop;
+}
+
 /* ------------------------------------------------------- */
 /* The background is by Loius Hoebregts. Available on Codepe. Copyright (c) 2021 by Louis Hoebregts (https://codepen.io/Mamboleoo/pen/WNxOvjo) */
-sky {
+skyy {
   display: block;
   background: black;
   width: 100vw;

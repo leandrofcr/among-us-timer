@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import MainButtons from './components/MainButtons';
+import Stars from './components/Stars';
 import Timer from './components/Timer';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       minutes: 0,
       timeIndex: 3,
       inputTime: ['0', '0', '0', '0'],
+      showAnimation: false,
     };
     this.startTimer = this.startTimer.bind(this);
     this.pauseTimer = this.pauseTimer.bind(this);
@@ -46,6 +48,7 @@ class App extends Component {
   startTimer() {
     this.verifyMaxNumbers();
     const ONE_SECOND = 1000;
+    const COUNTDOWN = 0;
     this.timerInterval = setInterval(() => {
       const { seconds, minutes } = this.state;
       if (seconds === 0 && minutes === 0) {
@@ -55,6 +58,9 @@ class App extends Component {
         this.setState((prevState) => ({ minutes: prevState.minutes - 1, seconds: 59 }));
       } else {
         this.setState((prevState) => ({ seconds: prevState.seconds - 1 }));
+      }
+      if (seconds <= COUNTDOWN && minutes === 0) {
+        this.setState({ showAnimation: true });
       }
     }, ONE_SECOND);
   }
@@ -104,21 +110,25 @@ class App extends Component {
   }
 
   render() {
-    const { seconds, minutes } = this.state;
+    const { seconds, minutes, showAnimation } = this.state;
     return (
       <div className="App">
-        <Header />
-        <Timer
+        {showAnimation && <Stars />}
+        {!showAnimation && <Header />}
+        {!showAnimation
+        && <Timer
           sec={ seconds }
           min={ minutes }
           addTime={ this.addTime }
           start={ this.startTimert }
-        />
-        <MainButtons
+          reset={ this.stopTimer }
+        />}
+        {!showAnimation
+        && <MainButtons
           startTimer={ this.startTimer }
           pauseTimer={ this.pauseTimer }
           stopTimer={ this.stopTimer }
-        />
+        />}
       </div>
     );
   }

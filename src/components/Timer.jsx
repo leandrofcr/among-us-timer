@@ -4,7 +4,7 @@ import DialPad from './DialPad';
 
 class Timer extends Component {
   render() {
-    const { sec, min, addTime } = this.props;
+    const { sec, min, addTime, reset } = this.props;
     const TEN = 10;
     const minutes = min < TEN ? `0${min}` : min;
     const seconds = sec < TEN ? `0${sec}` : sec;
@@ -16,7 +16,7 @@ class Timer extends Component {
           </span>
         </div>
         <div className="dial-pad-container">
-          <DialPad addTime={ addTime } />
+          <DialPad addTime={ addTime } reset={ reset } />
         </div>
         {/* <button type="button" onClick={ this.startTimer }>start</button>
         <button type="button" onClick={ this.pauseTimer }>pause</button> */}
