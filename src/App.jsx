@@ -18,18 +18,24 @@ class App extends Component {
     this.stopTimer = this.stopTimer.bind(this);
     this.addTime = this.addTime.bind(this);
     this.convertToNumber = this.convertToNumber.bind(this);
+    this.verifyMaxNumbers = this.verifyMaxNumbers.bind(this);
   }
 
-  componentDidMount() {
-
+  verifyMaxNumbers() {
+    const { seconds } = this.state;
+    const sixtySecs = 60;
+    if (seconds > sixtySecs) {
+      this.setState((prevState) => ({
+        seconds: prevState.seconds - sixtySecs,
+        minutes: prevState.minutes + 1,
+      }));
+    }
   }
 
   convertToNumber() {
     const { inputTime } = this.state;
     const secNumber = parseFloat(inputTime[2] + inputTime[3]);
     const minNumber = parseFloat(inputTime[0] + inputTime[1]);
-
-    // limit seconds value in 60;
 
     this.setState({
       seconds: secNumber,
@@ -38,7 +44,7 @@ class App extends Component {
   }
 
   startTimer() {
-    this.convertToNumber();
+    this.verifyMaxNumbers();
     const ONE_SECOND = 1000;
     this.timerInterval = setInterval(() => {
       const { seconds, minutes } = this.state;
