@@ -18,6 +18,15 @@ header {
   color: rgba(245, 245, 245, 0.822);
 }
 
+a {
+  text-decoration: none;
+  color: cyan;
+}
+a:hover {
+  color: cyan;
+  font-weight: 600;
+  text-decoration: underline;
+}
 .title-spotlight {
   color: red;
 }
@@ -38,7 +47,7 @@ header {
 .main-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10%;
   background-image: url("./images/timer.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -90,23 +99,45 @@ header {
 }
 
 .main-buttons button {
-  color: black;
+  color: #0a0a0a;
+  bottom: 0px;
   border: none;
   margin: 5px;
+  margin-bottom: 10px;
   padding: 5px 10px;
   border-radius: 5px;
   background-color: rgb(165, 165, 165);
   text-transform: uppercase;
   font-weight: 600;
+  width: 40px;
+  height: 25px;
 }
 
 .main-buttons button:hover {
   background-color: cyan;
 }
 
+.fa-backspace:hover {
+  pointer-events: none;
+  cursor: no-drop;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 50px;
+  background-color: #0a0a0a;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
 /* ------------------------------------------------------- */
 /* The background is by Loius Hoebregts. Available on Codepe. Copyright (c) 2021 by Louis Hoebregts (https://codepen.io/Mamboleoo/pen/WNxOvjo) */
-sky {
+skyy {
   display: block;
   background: black;
   width: 100vw;
