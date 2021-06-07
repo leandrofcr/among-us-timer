@@ -26,6 +26,7 @@ class DialPad extends Component {
           key="backspace"
           className="fas fa-backspace"
           id="del"
+          disabled
         >
           {' '}
         </button>
